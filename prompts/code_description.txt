@@ -1,0 +1,7 @@
+Q: What this code means: "self.fix_manager = FixManager(self.fix_env.sell_side, self.test_id)\n        self.fix_message = FixMessageNewOrderSingleOMS(self.data_set)\n        self.fix_message.set_default_dma_limit()\n        self.fix_message.change_parameter(\"Price\",\"10\")\n    self.fix_manager.send_message_fix_standard(self.fix_message)"?
+A: This code describe new order creation with Price=10
+###
+
+
+Q: What this code means: {0}?
+A:
