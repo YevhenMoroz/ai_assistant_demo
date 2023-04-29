@@ -1,11 +1,11 @@
-from chronological import read_prompt, main, cleaned_completion
+from chronological import read_prompt, main, cleaned_chat_completion
 
 
 async def generate_dma_order_code(params):
     prompt = read_prompt('order_creation_prompt')
-    return await cleaned_completion(
+    return await cleaned_chat_completion(
         prompt.format(params),
-        model="text-davinci-003",
+        model="gpt-3.5-turbo",
         temperature=0.2,
         max_tokens=300,
         stop=["\n\n"],
