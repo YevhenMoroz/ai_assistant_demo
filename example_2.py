@@ -5,7 +5,7 @@ async def generate_code_description(params):
     prompt = read_prompt('code_description')
     return await cleaned_completion(
         prompt.format(params),
-        engine="davinci",
+        model="text-davinci-003",
         temperature=0.2,
         max_tokens=300,
         stop=["\n\n"],
