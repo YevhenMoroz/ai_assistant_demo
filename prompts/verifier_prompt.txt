@@ -1,0 +1,27 @@
+Q: Can you generate verification code for new order on sell side gtw?
+A:
+self.fix_verifier = FixVerifier(self.fix_env.sell_side, self.test_id)
+self.fix_env = self.environment.get_list_fix_environment()[0]
+self.fix_execution_report = FixMessageExecutionReportOMS(self.data_set)
+self.fix_execution_report.set_default_new(self.fix_message)
+self.fix_verifier.check_fix_message_fix_standard(self.fix_execution_report)
+
+
+###
+
+
+Q: Can you generate verification code for filled order on buy side gtw without next fields: Parties, Text?
+A:
+self.fix_verifier = FixVerifier(self.fix_env.buy_side, self.test_id)
+self.fix_env = self.environment.get_list_fix_environment()[0]
+self.fix_execution_report = FixMessageExecutionReportOMS(self.data_set)
+self.fix_execution_report.set_default_filled(self.fix_message)
+ignored_list = ['Parties', 'Text']
+self.fix_verifier.check_fix_message_fix_standard(self.fix_execution_report, ignored_fields=ignored_list)
+
+
+###
+
+
+Q: Can you generate verification code {0}?
+A:
